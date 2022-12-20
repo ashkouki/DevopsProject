@@ -22,5 +22,18 @@ pipeline {
                 bat 'mvn test'
             }
         }
+		
+		stage("SONAR Code-Inspection"){
+             steps {
+                bat 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=ash'
+
+            }
+        }
+		 stage("Deploy Artifacts to Nexus"){
+             steps {
+                bat 'mvn deploy'
+
+                     }
+                 }
 	}
 }
