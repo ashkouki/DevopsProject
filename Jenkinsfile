@@ -52,7 +52,7 @@ pipeline {
                          }
                     }
                 }
-         stage('Deploy our image to Docker Desktop') {
+         stage('Push the image to Docker Hub') {
 
              steps {
 
